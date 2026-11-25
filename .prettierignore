@@ -1,0 +1,7 @@
+build/
+.react-router/
+drizzle/
+seed/
+package-lock.json
+.agents/
+docs/PROJECT_BRIEF.md
