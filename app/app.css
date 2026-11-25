@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/*
+ * Design-Tokens (Palette aus dem alten Tracker). Light/Dark über CSS-Variablen:
+ * Standard folgt dem System, `data-theme` auf <html> überschreibt.
+ */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --col: #e9edf1;
+  --ink: #15212b;
+  --muted: #5b6b78;
+  --line: #d9e0e6;
+  --accent: #1f5f8b;
+  --accent-ink: #ffffff;
+  --drop: #d6e7f3;
+  --s-neutral: #6b7a86;
+  --s-neutral-bg: #eceff2;
+  --s-blue: #1f5f8b;
+  --s-blue-bg: #e3eef6;
+  --s-violet: #6a4bb0;
+  --s-violet-bg: #eee9f8;
+  --s-green: #1f7a4d;
+  --s-green-bg: #e2f3ea;
+  --s-red: #a8423a;
+  --s-red-bg: #f7e6e4;
+  --warn: #9a5b00;
+  --warn-bg: #fdf0d9;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f161c;
+  --surface: #16212a;
+  --col: #121b22;
+  --ink: #e4ebf0;
+  --muted: #93a3b0;
+  --line: #2a3945;
+  --accent: #6fb0dc;
+  --accent-ink: #0f161c;
+  --drop: #1b3242;
+  --s-neutral: #a3b1bc;
+  --s-neutral-bg: #24313b;
+  --s-blue: #7fbbe3;
+  --s-blue-bg: #1b3242;
+  --s-violet: #b9a3ee;
+  --s-violet-bg: #2b2440;
+  --s-green: #7fd1a5;
+  --s-green-bg: #183428;
+  --s-red: #ee9a92;
+  --s-red-bg: #3a2220;
+  --warn: #f2bf6b;
+  --warn-bg: #3a2c12;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f161c;
+    --surface: #16212a;
+    --col: #121b22;
+    --ink: #e4ebf0;
+    --muted: #93a3b0;
+    --line: #2a3945;
+    --accent: #6fb0dc;
+    --accent-ink: #0f161c;
+    --drop: #1b3242;
+    --s-neutral: #a3b1bc;
+    --s-neutral-bg: #24313b;
+    --s-blue: #7fbbe3;
+    --s-blue-bg: #1b3242;
+    --s-violet: #b9a3ee;
+    --s-violet-bg: #2b2440;
+    --s-green: #7fd1a5;
+    --s-green-bg: #183428;
+    --s-red: #ee9a92;
+    --s-red-bg: #3a2220;
+    --warn: #f2bf6b;
+    --warn-bg: #3a2c12;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-col: var(--col);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-drop: var(--drop);
+  --color-neutral: var(--s-neutral);
+  --color-neutral-bg: var(--s-neutral-bg);
+  --color-blue: var(--s-blue);
+  --color-blue-bg: var(--s-blue-bg);
+  --color-violet: var(--s-violet);
+  --color-violet-bg: var(--s-violet-bg);
+  --color-green: var(--s-green);
+  --color-green-bg: var(--s-green-bg);
+  --color-red: var(--s-red);
+  --color-red-bg: var(--s-red-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

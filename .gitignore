@@ -6,3 +6,17 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# React Router / Build
+/.react-router/
+/build/
+.vercel/
+
+# Tests
+/coverage/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+.DS_Store
+e2e/.auth/
